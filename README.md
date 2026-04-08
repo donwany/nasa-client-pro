@@ -141,4 +141,7 @@ def main():
     logger.info("Searching for asteroids...")
     asteroids = nasa.search_asteroids("2026-04-01", "2026-04-06")
     print(f"Found: {asteroids['element_count']} asteroids this week!")
+
+if __name__ == "__main__":
+    main()
 ```
