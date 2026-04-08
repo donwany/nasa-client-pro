@@ -115,8 +115,8 @@ uv publish https://test.pypi.org/legacy/ \
 
 ## Install Wheel Files
 ```bash
-pip install dist/nasa_client_pro-0.1.0-py3-none-any.whl
-uv tool install dist/nasa_client_pro-0.1.0-py3-none-any.whl
+pip install dist/nasa_client_pro-0.3.0-py3-none-any.whl
+uv tool install dist/nasa_client_pro-0.3.0-py3-none-any.whl
 ```
 
 ## USAGE

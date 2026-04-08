@@ -12,10 +12,14 @@ class NASAClient:
         self.api_key = api_key
 
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1))
-    def get_apod(self):
+    def get_apod(self, start_date, end_date):
         """Astronomy Picture of the Day (APOD)."""
         endpoint = f"{self.BASE_URL}/planetary/apod"
-        params = {"api_key": self.api_key}
+        params = {
+            "api_key": self.api_key,
+            "start_date": start_date,
+            "end_date": end_date
+        }
         try:
             response = requests.get(endpoint, params=params, timeout=60)
             response.raise_for_status()
