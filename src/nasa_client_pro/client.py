@@ -46,3 +46,6 @@ class NASAClient:
             raise RuntimeError("NASA API request timed out")
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Request failed: {e}")
+
+class SpaceX:
+    ...

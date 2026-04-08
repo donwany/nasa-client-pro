@@ -86,13 +86,10 @@ export UV_PUBLISH_PASSWORD="pypi-AgEIcHlwaS5vcmcCJ..."
 uv publish
 
 # another
-uv publish --username __token__ --password pypi-AgEIcHlwaS5vcmcCJ...
+export PYPI_TOKEN="pypi-AgEIcHlwaS5vcmcCJ..."
+uv publish --username __token__ --password $PYPI_TOKEN
 
 # another
-export PYPI_TOKEN="pypi-AgEIcHlwaS5vcmcCJ..."
-uv publish --username __token__ --password $PYPI_TOKEN --repository-url https://test.pypi.org/legacy/
-
-# publish to testpypi
 uv publish --username __token__ --password pypi-AgEIcHlwaS5vcmcCJ...
 
 # using twine
@@ -100,17 +97,10 @@ export TWINE_USERNAME=__token__
 export TWINE_PASSWORD=pypi-AgENdGVzdC5
 twine upload --repository testpypi dist/*
 
-twine upload dist/* \
---verbose \
---repository testpypi \
---username __token__ \
---password pypi-AgEIcHlwaS5vcmcCJ...
-
+twine upload dist/* --verbose --repository testpypi --username __token__ --password pypi-AgEIcHlwaS5vcmcCJ...
 
 # debug trick
-uv publish https://test.pypi.org/legacy/ \
-  --username __token__ \
-  --password $PYPI_TOKEN
+uv publish https://test.pypi.org/legacy/ --username __token__ --password $PYPI_TOKEN
 ```
 
 ## Install Wheel Files
