@@ -18,7 +18,7 @@ class NASAClient:
         params = {
             "api_key": self.api_key,
             "start_date": start_date,
-            "end_date": end_date
+            "end_date": end_date,
         }
         try:
             response = requests.get(endpoint, params=params, timeout=60)
@@ -47,5 +47,5 @@ class NASAClient:
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Request failed: {e}")
 
-class SpaceX:
-    ...
+
+class SpaceX: ...

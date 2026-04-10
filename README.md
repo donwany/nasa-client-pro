@@ -127,7 +127,7 @@ def main():
 
     # 1. Get the cool space photo of the day
     logger.info("Fetching APOD...")
-    pods = nasa.get_apod(start_date="2026-04-01", end_date="2026-04-06")
+    pods = nasa.get_apod(start_date="2026-04-01", end_date="2026-04-07")
     # print(pod)
     for pod in pods:
         print(f"Today's Title: {pod['title']}")
